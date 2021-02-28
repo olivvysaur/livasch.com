@@ -2,7 +2,6 @@ import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import PageTemplate from '../components/PageTemplate';
-import ContactLinks from '../components/ContactLinks';
 import Markdown from '../components/Markdown';
 import { parsePageContent } from '../utils/parsePageContent';
 import { getAllPages } from '../utils/getAllPages';
@@ -18,15 +17,9 @@ interface PageProps {
   title: string;
   body: string;
   url: string;
-  contactLinks: {
-    name: string;
-    url: string;
-    icon: string;
-    colour: string;
-  }[];
 }
 
-const Page = ({ title, body, contactLinks, url }: PageProps) => {
+const Page = ({ title, body, url }: PageProps) => {
   const bodyWithoutTitle = body.split('\n\n').slice(1).join('\n\n');
   const description = getExcerpt({ body: bodyWithoutTitle, maxWordCount: 50 });
 
@@ -34,15 +27,6 @@ const Page = ({ title, body, contactLinks, url }: PageProps) => {
     <PageTemplate title={title} description={description} url={url}>
       <Column>
         <Markdown source={body} />
-
-        {contactLinks.length && (
-          <>
-            <Spacer height={48} />
-            <hr />
-            <Spacer height={24} />
-            <ContactLinks links={contactLinks} />
-          </>
-        )}
       </Column>
     </PageTemplate>
   );

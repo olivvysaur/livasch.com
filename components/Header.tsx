@@ -31,6 +31,7 @@ const Header = () => (
           <Link href='/[slug]' as='/about'>
             About
           </Link>
+          <Link href='/links'>Links</Link>
           <Link href='/archive'>Archive</Link>
         </Row>
       </Row>

@@ -6,7 +6,6 @@ export const parsePageContent = (content: any, slug: string) => {
   return {
     title: data.data.title,
     body: data.content,
-    contactLinks: data.data.contactLinks || [],
     colour: data.data.colour || '',
     url: `/${slug}`,
   };

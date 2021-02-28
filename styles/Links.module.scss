@@ -1,0 +1,25 @@
+.linkList {
+  padding: 0 !important;
+
+  .linkItem {
+    // border: 1px solid pink;
+    background-color: var(--background-highlight);
+
+    &::before {
+      display: none;
+    }
+
+    a {
+      padding: 16px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .icon {
+      margin-right: 16px;
+    }
+  }
+}
